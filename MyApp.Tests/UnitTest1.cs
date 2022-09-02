@@ -37,4 +37,19 @@ public class IsLeapYearTest
 
         Assert.True(Program.IsLeapYear(400));
     }
+
+    [Fact]
+    public void Hundreds_Large_Years()
+    {
+        //Setup
+        //Act
+        //Assert
+        Assert.False(Program.IsLeapYear(1700));
+        Assert.False(Program.IsLeapYear(1800));
+        Assert.False(Program.IsLeapYear(1900));
+
+        Assert.True(Program.IsLeapYear(1600));
+        Assert.True(Program.IsLeapYear(2000));
+    } 
+
 }
