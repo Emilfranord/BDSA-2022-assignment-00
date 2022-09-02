@@ -1,2 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace MyApp;
+
+
+public class Program{
+
+    public static void Main(string[] args){
+    }
+
+    public static bool IsLeapYear(int year){
+        
+        if (year % 100 == 0){
+            if(year % 400 == 0){
+                return true;
+            }
+            return false;
+        }
+        return year % 4 == 0;
+    }
+}
