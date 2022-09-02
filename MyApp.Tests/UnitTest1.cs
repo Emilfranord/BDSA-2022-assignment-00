@@ -52,4 +52,9 @@ public class IsLeapYearTest
         Assert.True(Program.IsLeapYear(2000));
     } 
 
+    [Fact]
+    public void Bool_Converter_Single_Args(){
+        Assert.Equal("yay", Program.BoolConverter(true));
+        Assert.Equal("nay", Program.BoolConverter(false));
+    }
 }
