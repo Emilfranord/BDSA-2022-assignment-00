@@ -5,12 +5,22 @@ public class Program{
 
     public static void Main(string[] args){
         var input = Console.ReadLine();
-        var res = BoolConverter(IsLeapYear(Int32.Parse(input)));
+        if (input == null){
+            return;
+        }
+        var res = BoolConverter(IsLeapYear(input));
         Console.WriteLine(res);
     }
 
+    public static bool IsLeapYear(String year){
+        return IsLeapYear(Int32.Parse(year));
+    }
+
     public static bool IsLeapYear(int year){
-        
+        if(year < 1582 ){
+            throw new ArgumentException();
+        }
+
         if (year % 100 == 0){
             if(year % 400 == 0){
                 return true;

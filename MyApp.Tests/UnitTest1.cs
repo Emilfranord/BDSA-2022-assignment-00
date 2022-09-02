@@ -8,7 +8,7 @@ public class IsLeapYearTest
     {
         //Setup
         //Act
-        var res = Program.IsLeapYear(3);
+        var res = Program.IsLeapYear(1605);
         //Assert
         Assert.False(res);
 
@@ -19,7 +19,7 @@ public class IsLeapYearTest
     {
         //Setup
         //Act
-        var res = Program.IsLeapYear(4);
+        var res = Program.IsLeapYear(4444);
         //Assert
         Assert.True(res);
 
@@ -31,11 +31,11 @@ public class IsLeapYearTest
         //Setup
         //Act
         //Assert
-        Assert.False(Program.IsLeapYear(100));
-        Assert.False(Program.IsLeapYear(200));
-        Assert.False(Program.IsLeapYear(300));
+        Assert.False(Program.IsLeapYear(4100));
+        Assert.False(Program.IsLeapYear(4200));
+        Assert.False(Program.IsLeapYear(4300));
 
-        Assert.True(Program.IsLeapYear(400));
+        Assert.True(Program.IsLeapYear(4400));
     }
 
     [Fact]
@@ -57,4 +57,12 @@ public class IsLeapYearTest
         Assert.Equal("yay", Program.BoolConverter(true));
         Assert.Equal("nay", Program.BoolConverter(false));
     }
+
+    [Fact]
+    public void Throw_Exception_When_Strictly_Before_Year(){
+        Assert.ThrowsAny<Exception>(() => Program.IsLeapYear(1200));
+        Assert.ThrowsAny<Exception>(() => Program.IsLeapYear(1581));
+        Assert.False(Program.IsLeapYear(1582));
+    }
+
 }
