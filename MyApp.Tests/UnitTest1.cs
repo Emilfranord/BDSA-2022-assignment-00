@@ -15,7 +15,7 @@ public class IsLeapYearTest
     }
 
     [Fact]
-    public void Devide_By_Four_True()
+    public void Divide_By_Four_True()
     {
         //Setup
         //Act
@@ -23,5 +23,18 @@ public class IsLeapYearTest
         //Assert
         Assert.True(res);
 
+    }
+
+    [Fact]
+    public void Hundreds_Handled()
+    {
+        //Setup
+        //Act
+        //Assert
+        Assert.False(Program.IsLeapYear(100));
+        Assert.False(Program.IsLeapYear(200));
+        Assert.False(Program.IsLeapYear(300));
+
+        Assert.True(Program.IsLeapYear(400));
     }
 }
